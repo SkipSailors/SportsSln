@@ -1,6 +1,5 @@
 namespace SportsStore.Pages;
 
-using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models;
