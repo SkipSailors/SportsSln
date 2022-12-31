@@ -1,0 +1,6 @@
+﻿@model ProductListViewModel
+@foreach(var p in Model.Products ?? Enumerable.Empty<Product>()) {
+    <partial name="ProductSummary" model="p"/>
+}
+
+<partial name="PageLinks"/>
