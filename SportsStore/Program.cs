@@ -11,6 +11,8 @@ builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 builder.Services.AddRazorPages();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
+builder.Services.AddScoped(SessionCart.GetCart);
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 WebApplication app = builder.Build();
 
 app.UseStaticFiles();
