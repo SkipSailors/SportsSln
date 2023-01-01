@@ -35,7 +35,7 @@ public class CartPageTests
             });
         HttpContext mockContext = Substitute.For<HttpContext>();
         mockContext.Session.Returns(mockSession);
-        CartModel cartModel = new(mockRepo)
+        CartModel cartModel = new(mockRepo, testCart)
         {
             PageContext = new PageContext(new ActionContext
             {
@@ -61,7 +61,7 @@ public class CartPageTests
         mockSession.Set(Arg.Any<string>(), Arg.Do<byte[]>(SessionCallback));
         HttpContext mockContext = Substitute.For<HttpContext>();
         mockContext.Session.Returns(mockSession);
-        CartModel cartModel = new(mockRepo)
+        CartModel cartModel = new(mockRepo, testCart)
         {
             PageContext = new PageContext(new ActionContext
             {
