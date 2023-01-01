@@ -1,7 +1,7 @@
 ﻿@model Cart
 
 <div class="">
-    @if (Model?.Lines.Count() > 0)
+    @if (Model.Lines?.Any() ?? false)
     {
         <small class="navbar-text">
             <b>Your cart:</b>

@@ -6,19 +6,19 @@
     {
         public static void EnsurePopulated(IApplicationBuilder app)
         {
-            StoreDbContext context = app
+            StoreDbContext? context = app
                 .ApplicationServices
                 .CreateScope()
                 .ServiceProvider
                 .GetService<StoreDbContext>();
-            if (context.Database.GetPendingMigrations().Any())
+            if (context?.Database.GetPendingMigrations().Any() ?? false)
             {
                 context.Database.Migrate();
             }
 
-            if (!context.Products.Any())
+            if (!context?.Products.Any() ?? false)
             {
-                context.Products.AddRange(
+                context?.Products.AddRange(
                     new Product
                     {
                         Name = "Kayak",
